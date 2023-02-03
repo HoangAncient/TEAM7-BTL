@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: #25408f;
+    color: white;
+}
+.course {
+    background-color: aquamarine;
+    padding-top: 10px 20px;
+}

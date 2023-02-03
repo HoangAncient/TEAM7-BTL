@@ -1,0 +1,55 @@
+
+body {
+    min-width:360px;        /* Suppose you want minimum width of 1000px */
+    width: auto !important;  /* Firefox will set width as auto */
+}
+.administrator {
+    padding-left: 10%;
+    color: #F7F7F7;
+}
+.nav-link {
+    color: #F7F7F7;
+}
+.nav-link:hover {
+    color: #FFC258;
+}
+.nav-column {
+    background-color:  #25408f;
+}
+
+.menu-item {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.top-bar {
+    background-color: #25408f;
+    height: 8%;
+    padding: 0;
+    margin: 0;
+    min-width: 100wh;
+    display: flex;
+}
+
+.control-btn {
+    background-color: #3cb4e7;
+    color: #F7F7F7;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.top-bar .control-btn:hover {
+    background-color: white;  
+    color: #FFC258;
+    border: none;
+}
+
+.top-bar .control-btn {
+    margin-left: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
