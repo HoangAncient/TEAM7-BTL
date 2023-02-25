@@ -51,7 +51,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     d += '</div>';
                     index++;
                 });
-
                 $('#courseList').html(d);
             }
         });
