@@ -53,9 +53,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     d += '<a href = "adminUI.php?classID='+ v['classID'] +'"><h5 id =' + v['classID'] + '> <span class = "text-danger"> ' + index + '. </span>' + v['courseName'] + ' lớp ' + v['classID']+'</h5></a>';
                     d += '</div>';
                     index++;
-
                 });
-
                 $('#courseList').html(d);
             }
         });

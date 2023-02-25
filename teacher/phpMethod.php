@@ -13,7 +13,6 @@
             $sql = "insert into questintest(questionID, testID) select id, '$testID' from question where chapter = '$chapter' order by rand() limit $int";
             $result = $conn->query($sql);
             
-            
         }
     }
 
