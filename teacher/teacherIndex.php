@@ -7,9 +7,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
     $ID = $_SESSION['ID'];
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

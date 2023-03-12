@@ -109,6 +109,12 @@
     transform: translateX(-50%);
 }
 
+.sign_up {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
 @media (min-width: 481px) {
     
 }
@@ -120,7 +126,7 @@
     
     
 }
-    </style>
+</style>
         
 </head>
 <body>
@@ -140,7 +146,10 @@
                     <?php } ?>
                     <input class="submit" type="submit" value="Sign in" onclick="">
                 </form>
+            </div>
 
+            <div class = "sign_up">
+                <a href="./adminSignup.php">You haven't got an account? Sign up here</a>
             </div>
         </div>
     </div>
