@@ -110,8 +110,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                 <div id="workplace">
                 </div>
                 <div id = "item-workspace">
-                    <a href="addExam.php">Add exam manually</a>
-                    <a href="autoAddExam.php">Auto-generated Test</a>
+                    <a href="autoAddExam.php">Create Test</a>
             </div>
             </div>
         </div>

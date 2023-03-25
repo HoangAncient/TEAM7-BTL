@@ -31,7 +31,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
 <body>
 <div class="container header">
         <div class="col-lg-1"><a href="#">Trang chủ</a></div>
-        <div class="col-lg-1"><a href="./studentList.php">Danh sách sinh viên lớp</a></div>
+        <!-- <div class="col-lg-1"><a href="./studentList.php">Danh sách sinh viên lớp</a></div> -->
         <div class="col-lg-1"><a href="../login/adminLogout.php">Sign Out</a></div>
         
     </div>
@@ -55,6 +55,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     index++;
                 });
                 $('#courseList').html(d);
+                console.log(data);
             }
         });
     }

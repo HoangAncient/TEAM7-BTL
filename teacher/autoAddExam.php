@@ -88,6 +88,8 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && isset($_SESSION['db
                         <hr>
                     </div>
                     <button type="button" onClick="addQuestion()"> Add Question </button>
+                    <button type="button" onClick="addExam.php"> Thêm câu hỏi thủ công </button>
+
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <button type="button" name="button" class="btn btn-danger" id="btnFinish">Xác nhận</button>
