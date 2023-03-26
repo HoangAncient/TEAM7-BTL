@@ -176,11 +176,6 @@
                     </div>
 
                     <div>
-                        <label class="form-label" for="middleName">Middle Name</label><br>
-                        <input class="pass-form" type="text" id="middleName" name="middleName" value="" placeholder="Please enter your middle name"> <br><br>
-                    </div>
-
-                    <div>
                         <label class="form-label" for="email">Email <span class = "required">*</span></label><br>
                         <input class="pass-form" type="email" id="email" name="email" value="" placeholder="Please enter your email" required> <br><br>
                     </div>

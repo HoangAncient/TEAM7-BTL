@@ -14,12 +14,11 @@
     $adminPass = validate($_SESSION['adminPass']);
     $firstName = validate($_SESSION['firstName']);
     $lastName = validate($_SESSION['lastName']);
-    $middleName = validate($_SESSION['middleName']);
     $email = validate($_SESSION['email']);
     $birthday = validate($_SESSION['birthday']);
     $phone = validate($_SESSION['phone']);
 
-    $sql = "INSERT INTO person (account, pass, firstName, lastName, middleName, email, birthday, phoneNumber) VALUES ('$adminAcc', '$adminPass', '$firstName', '$lastName', '$middleName', '$email', '$birthday', '$phone')";
+    $sql = "INSERT INTO person (account, pass, firstName, lastName, email, birthday, phoneNumber) VALUES ('$adminAcc', '$adminPass', '$firstName', '$lastName', '$email', '$birthday', '$phone')";
 
     $result = $conn->query($sql);
   }

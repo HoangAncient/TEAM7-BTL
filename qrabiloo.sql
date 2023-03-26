@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 12, 2023 at 05:27 PM
+-- Generation Time: Mar 26, 2023 at 10:23 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -29,9 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `courseclass` (
   `classID` varchar(25) NOT NULL,
+  `className` varchar(256) NOT NULL,
   `courseID` varchar(20) NOT NULL,
   `teacherID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courseclass`
+--
+
+INSERT INTO `courseclass` (`classID`, `className`, `courseID`, `teacherID`) VALUES
+('2223I_INT2204_24', '9.0', 'INT2204', 1235);
 
 -- --------------------------------------------------------
 
@@ -42,6 +50,26 @@ CREATE TABLE `courseclass` (
 CREATE TABLE `courses` (
   `courseID` varchar(20) NOT NULL,
   `courseName` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`courseID`, `courseName`) VALUES
+('INT2204', 'IELTS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lecture`
+--
+
+CREATE TABLE `lecture` (
+  `lectureID` int(11) NOT NULL,
+  `filepath` varchar(255) NOT NULL,
+  `STT` int(11) NOT NULL,
+  `classID` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -71,29 +99,30 @@ CREATE TABLE `person` (
   `pass` varchar(50) NOT NULL,
   `firstName` varchar(20) NOT NULL,
   `lastName` varchar(20) NOT NULL,
-  `middleName` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `birthday` varchar(250) NOT NULL,
-  `phoneNumber` varchar(12) NOT NULL,
-  `isTeacher` tinyint(1) DEFAULT NULL,
-  `ecoin` int(11) DEFAULT NULL
+  `birthday` date NOT NULL,
+  `address` text NOT NULL,
+  `phoneNumber` int(12) NOT NULL,
+  `isTeacher` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `person`
 --
 
-INSERT INTO `person` (`ID`, `account`, `pass`, `firstName`, `lastName`, `middleName`, `email`, `birthday`, `phoneNumber`, `isTeacher`, `ecoin`) VALUES
-(1, 'giangvien01', 'abc', 'Trinh', 'Khoi', 'Minh', 'khoikhtn2109@gmail.com', '21/09/2003', '0984146006', 1, 0),
-(2, 'Florentino', 'a', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006', NULL, NULL),
-(3, 'giangvien0123', 'a', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006', NULL, NULL),
-(4, 'Minh Khoi', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006', NULL, NULL),
-(5, 'Minh Khoi', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006', NULL, NULL),
-(6, 'giangvien011212', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006', NULL, NULL),
-(7, 'giangvien0112333', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '2003-09-21', '0984146006', NULL, NULL),
-(8, 'Magneto', 'abc', 'Edward', 'Justin', '', 'khoikhtn2109@gmail.com', '2003-09-21', '0984146006', NULL, NULL),
-(9, 'giangvien03213', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '2003-09-21', '0984146006', NULL, NULL),
-(10, 'Sunspot', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '2003-09-21', '0984146006', NULL, NULL);
+INSERT INTO `person` (`ID`, `account`, `pass`, `firstName`, `lastName`, `email`, `birthday`, `address`, `phoneNumber`, `isTeacher`) VALUES
+(1, 'admin01', 'admin', 'Hoang', 'Dinh', 'hoangdinhnho23@gmail.com', '2003-08-13', '', 839493747, 2),
+(2, 'admin02', 'admin', 'Khoi', 'Trinh', 'khoikhtn2109@gmail.com', '2003-09-21', '', 123456789, 2),
+(1234, 'admin03', 'admin', 'Minh', 'Doan', 'minhwhisky700@gmail.com', '2003-04-04', '', 123456798, 2),
+(1235, 'giangvien01', 'abc@123', 'Hoang', 'Dinh', 'hoangdinhnho23@gmail.com', '2023-03-08', '', 839493747, 1),
+(1236, 'giangvien02', 'abc@123', 'Trang', 'Phạm', 'trangptq@vnu.edu.vn', '2023-03-01', '', 123456798, 1),
+(1237, 'giangvien03', 'abc@123', 'Minh', 'Phạm', '21021496@vnu.edu.vn', '2023-03-01', '', 123456798, 1),
+(1238, '21000001', '21000001', 'Linh', 'Tinh', 'hellocunconhaha@gmail.com', '2023-03-01', '', 123456798, 0),
+(1239, '21000002', '21000002', 'Tinh', 'Binh', 'doibung@gmail.com', '2023-03-07', '', 123456798, 0),
+(1240, '21000003', '21000003', 'Binh', 'Chilling', 'helloongtuong@gmail.com', '2023-03-10', '', 123456798, 0),
+(1241, 'Florentino', 'a', 'Trịnh', 'Khôi', 'khoikhtn2109@gmail.com', '2003-09-21', '', 984146006, 0),
+(1242, 'Sunspot', 'abc', 'Trịnh', 'Khôi', 'khoikhtn2109@gmail.com', '2003-09-21', '', 984146006, 0),
+(1243, 'Hercules', 'abcd', 'Trịnh', 'Khôi', 'khoikhtn2109@gmail.com', '2003-09-21', '', 984146006, 0);
 
 -- --------------------------------------------------------
 
@@ -121,8 +150,22 @@ CREATE TABLE `question` (
   `answer3` text NOT NULL,
   `answer4` text NOT NULL,
   `ranswer` text NOT NULL,
-  `courseID` varchar(25) NOT NULL,
-  `chapter` varchar(11) NOT NULL
+  `chapter` varchar(11) NOT NULL,
+  `hardmode` int(1) NOT NULL,
+  `explaination` text NOT NULL,
+  `bankID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questionbank`
+--
+
+CREATE TABLE `questionbank` (
+  `bankID` int(11) NOT NULL,
+  `bankName` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -132,24 +175,9 @@ CREATE TABLE `question` (
 --
 
 CREATE TABLE `sample1` (
-  `ID` int(11) NOT NULL,
-  `account` varchar(250) NOT NULL,
-  `pass` varchar(250) NOT NULL,
-  `firstName` varchar(250) NOT NULL,
-  `lastName` varchar(250) NOT NULL,
-  `middleName` varchar(250) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `birthday` varchar(250) NOT NULL,
-  `phoneNumber` varchar(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `filepath` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sample1`
---
-
-INSERT INTO `sample1` (`ID`, `account`, `pass`, `firstName`, `lastName`, `middleName`, `email`, `birthday`, `phoneNumber`) VALUES
-(1, 'Florentino', 'a', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '213', '0984146006'),
-(2, 'giangvien01111', 'abc', 'Trịnh', 'Khôi', 'Minh', 'khoikhtn2109@gmail.com', '2003-09-21', '0984146006');
 
 -- --------------------------------------------------------
 
@@ -160,6 +188,28 @@ INSERT INTO `sample1` (`ID`, `account`, `pass`, `firstName`, `lastName`, `middle
 CREATE TABLE `study` (
   `studentID` int(11) NOT NULL,
   `classID` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stulearnlec`
+--
+
+CREATE TABLE `stulearnlec` (
+  `studentID` int(11) NOT NULL,
+  `LecID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacheracessbank`
+--
+
+CREATE TABLE `teacheracessbank` (
+  `teacherID` int(11) NOT NULL,
+  `bankID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -177,21 +227,10 @@ CREATE TABLE `test` (
   `timeEnd` datetime NOT NULL,
   `timePeriod` int(11) NOT NULL,
   `studentOnly` tinyint(1) NOT NULL,
-  `turn` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `username` text NOT NULL,
-  `usergrade` double DEFAULT NULL,
-  `timeStart` datetime DEFAULT NULL,
-  `timeEnd` datetime DEFAULT NULL
+  `turn` int(11) DEFAULT NULL,
+  `testType` int(1) NOT NULL,
+  `stt` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -211,6 +250,13 @@ ALTER TABLE `courseclass`
 --
 ALTER TABLE `courses`
   ADD PRIMARY KEY (`courseID`);
+
+--
+-- Indexes for table `lecture`
+--
+ALTER TABLE `lecture`
+  ADD PRIMARY KEY (`lectureID`),
+  ADD KEY `lecInClass` (`classID`);
 
 --
 -- Indexes for table `onexam`
@@ -238,13 +284,19 @@ ALTER TABLE `questintest`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `questCourse` (`courseID`);
+  ADD KEY `questInBank` (`bankID`);
+
+--
+-- Indexes for table `questionbank`
+--
+ALTER TABLE `questionbank`
+  ADD PRIMARY KEY (`bankID`);
 
 --
 -- Indexes for table `sample1`
 --
 ALTER TABLE `sample1`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `study`
@@ -252,6 +304,20 @@ ALTER TABLE `sample1`
 ALTER TABLE `study`
   ADD PRIMARY KEY (`classID`,`studentID`) USING BTREE,
   ADD KEY `studyPerson` (`studentID`);
+
+--
+-- Indexes for table `stulearnlec`
+--
+ALTER TABLE `stulearnlec`
+  ADD PRIMARY KEY (`studentID`,`LecID`),
+  ADD KEY `stuLearnLec` (`LecID`);
+
+--
+-- Indexes for table `teacheracessbank`
+--
+ALTER TABLE `teacheracessbank`
+  ADD PRIMARY KEY (`teacherID`,`bankID`),
+  ADD KEY `teachAccessBank` (`bankID`);
 
 --
 -- Indexes for table `test`
@@ -262,26 +328,26 @@ ALTER TABLE `test`
   ADD KEY `testCourseClass` (`courseClassID`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `lecture`
+--
+ALTER TABLE `lecture`
+  MODIFY `lectureID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `onexam`
 --
 ALTER TABLE `onexam`
-  MODIFY `doID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `doID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `person`
 --
 ALTER TABLE `person`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1244;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -290,16 +356,16 @@ ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
+-- AUTO_INCREMENT for table `questionbank`
+--
+ALTER TABLE `questionbank`
+  MODIFY `bankID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sample1`
 --
 ALTER TABLE `sample1`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
@@ -311,6 +377,12 @@ ALTER TABLE `user`
 ALTER TABLE `courseclass`
   ADD CONSTRAINT `classCourses` FOREIGN KEY (`courseID`) REFERENCES `courses` (`courseID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `classTeacher` FOREIGN KEY (`teacherID`) REFERENCES `person` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `lecture`
+--
+ALTER TABLE `lecture`
+  ADD CONSTRAINT `lecInClass` FOREIGN KEY (`classID`) REFERENCES `courseclass` (`classID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `onexam`
@@ -330,7 +402,7 @@ ALTER TABLE `questintest`
 -- Constraints for table `question`
 --
 ALTER TABLE `question`
-  ADD CONSTRAINT `questCourse` FOREIGN KEY (`courseID`) REFERENCES `courses` (`courseID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `questInBank` FOREIGN KEY (`bankID`) REFERENCES `questionbank` (`bankID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `study`
@@ -338,6 +410,20 @@ ALTER TABLE `question`
 ALTER TABLE `study`
   ADD CONSTRAINT `studyClass` FOREIGN KEY (`classID`) REFERENCES `courseclass` (`classID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `studyPerson` FOREIGN KEY (`studentID`) REFERENCES `person` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `stulearnlec`
+--
+ALTER TABLE `stulearnlec`
+  ADD CONSTRAINT `stuLearnLec` FOREIGN KEY (`LecID`) REFERENCES `lecture` (`lectureID`),
+  ADD CONSTRAINT `stuLec` FOREIGN KEY (`studentID`) REFERENCES `person` (`ID`);
+
+--
+-- Constraints for table `teacheracessbank`
+--
+ALTER TABLE `teacheracessbank`
+  ADD CONSTRAINT `teachAccessBank` FOREIGN KEY (`bankID`) REFERENCES `questionbank` (`bankID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `teachBank` FOREIGN KEY (`teacherID`) REFERENCES `person` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `test`

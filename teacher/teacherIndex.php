@@ -13,7 +13,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Teacher Index</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-/LjQZzcpTzaYn7qWqRIWYC5l8FWEZ2bIHIz0D73Uzba4pShEcdLdZyZkI4Kv676E" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -50,7 +50,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     d += '<a href = "adminUI.php?classID='+ v['classID'] +'"><h5 id =' + v['classID'] + '> <span class = "text-danger"> ' + index + '. </span>' + v['courseName'] + ' lớp ' + v['classID']+'</h5></a>';
                     d += '</div>';
                     index++;
-
                 });
 
                 $('#courseList').html(d);
