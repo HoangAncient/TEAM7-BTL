@@ -114,6 +114,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     <a href="autoAddExam.php">Auto-generated Test</a>
                 </div>
 
+                <!-- Lecture CRUD -->
                 <div class = "lecture_operations">
                     <br><br><br>
                     <div><b>Lecture CRUD</b></div> <br>
