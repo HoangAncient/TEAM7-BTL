@@ -15,7 +15,7 @@
 <body>
   
     <div class="container-fluid">
-      <a href="./login/adminLogin.php"><img class="img-fluid" src="./assets/image/firstAppearance.svg" alt=""></a>
+      <a href="./login/adminLogin.php"><img style="width:100%" src="./assets/image/firstAppearance.svg" alt=""></a>
     </div>
   
 
