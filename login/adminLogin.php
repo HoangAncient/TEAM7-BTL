@@ -22,7 +22,7 @@
      margin: 0;
      height: 100vh;
      width: 100vw;
-     background: url("../assets/background-img/background.jpg") no-repeat top left 100%;
+     background: url("../assets/image/login.svg") no-repeat top left 100%;
  }
 
 
