@@ -107,22 +107,38 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     </button>
                     
                 </div>
-                <div id="workplace">
-                </div>
+                <div id="workplace"></div>
+
                 <div id = "item-workspace">
                     <a href="addExam.php">Add exam manually</a>
                     <a href="autoAddExam.php">Auto-generated Test</a>
+                </div>
+
+                <!-- Lecture CRUD -->
+                <div class = "lecture_operations">
+                    <br><br><br>
+                    <div><b>Lecture CRUD</b></div> <br>
+                    <button onclick="create_lecture()">Create</button>
+                    <button onclick="view_lecture()">View</button>
+                </div>
+                
             </div>
-            </div>
+
         </div>
 
     </div>
-    <div id = "addExamForm">
-        
-    </div>
 </body>
-<script src="../assets/js/adminUI.js"></script>
 
+<script src="../assets/js/adminUI.js"></script>
+<script>
+    function create_lecture() {
+        window.location.href = "./lecture_CRUD/create.php";
+    }
+
+    function view_lecture() {
+        window.location.href = "./lecture_CRUD/view.php";
+    }
+</script>
 
 </html>
 <?php }

@@ -15,16 +15,8 @@
             } else {
                 header("Location: index.php?error=Invalid ID");
             }
-
         } else {
             header("Location: index.php?error=Invalid ID");
         }
-    
-    
-    
-    
-    
-    
-    
     }
     ?>

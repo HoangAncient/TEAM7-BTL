@@ -109,6 +109,12 @@
     transform: translateX(-50%);
 }
 
+.sign_up {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
 @media (min-width: 481px) {
     
 }
@@ -120,7 +126,7 @@
     
     
 }
-    </style>
+</style>
         
 </head>
 <body>
@@ -144,6 +150,13 @@
                     <!-- Reset password link -->
                     <a href="reset-password.php">Forgot your password ?</a>
 
+                        <!-- Reset password link -->
+                        <a href="reset-password.php">Forgot your password ?</a>
+
+            </div>
+
+            <div class = "sign_up">
+                <a href="./adminSignup.php">You haven't got an account? Sign up here</a>
             </div>
         </div>
     </div>
