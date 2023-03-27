@@ -146,6 +146,9 @@
                     <?php } ?>
                     <input class="submit" type="submit" value="Sign in" onclick="">
                 </form>
+                
+                    <!-- Reset password link -->
+                    <a href="reset-password.php">Forgot your password ?</a>
 
                         <!-- Reset password link -->
                         <a href="reset-password.php">Forgot your password ?</a>
