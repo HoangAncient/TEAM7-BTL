@@ -111,7 +111,6 @@ CREATE TABLE `person` (
   `firstName` varchar(20) NOT NULL,
   `middleName` varchar(25) DEFAULT NULL,
   `lastName` varchar(20) NOT NULL,
-  `middleName` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `avatar` text DEFAULT NULL,
   `birthday` date NOT NULL,
