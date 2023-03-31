@@ -99,7 +99,7 @@
                                     mysqli_stmt_bind_param($stmt, "s", $tokenEmail); // tell it what "?" will be replaced with before we excute the staement
                                     mysqli_stmt_execute($stmt);
                                     echo "<p>Your password has been updated</p>";
-                                    $loginLink = "http://localhost:8080/se_team7/TEAM7-BTL/login/adminLogin.php";
+                                    $loginLink = "http://localhost/demwcontest/wcontest-team2/login/adminLogin.php";
                                     echo "<a href=".$loginLink.">Back to log in</a>";
                                 }
                             }

@@ -41,7 +41,7 @@
         $token = random_bytes(32);
 
     // create the link that is sent to user
-        $url = "http://localhost:8080/se_team7/TEAM7-BTL/login/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
+        $url = "http://localhost/demwcontest/Wcontest-Team2/login/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
 
         // create expiry date to our token
         $expires = date("U") + 1800; // today + 1800s 2

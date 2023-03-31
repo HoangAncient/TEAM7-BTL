@@ -106,9 +106,9 @@ if (isset($_POST['submit'])) {
     if (!is_uploaded_file($tempname)) $check_uploaded = false;
     
     if ($check_uploaded == false) {
-        $sql = "INSERT INTO question(quest,answer1,answer2,answer3,answer4,ranswer, courseID, chapter) VALUES ('$quest','$answer1','$answer2','$answer3','$answer4','$ranswer', '$db', '$chapter')";
+        $sql = "INSERT INTO question(quest,answer1,answer2,answer3,answer4,ranswer, bankID, chapter) VALUES ('$quest','$answer1','$answer2','$answer3','$answer4','$ranswer', '134', '$chapter')";
     } else {
-        $sql = "INSERT INTO question(quest,filepath, answer1,answer2,answer3,answer4,ranswer,courseID, chapter) VALUES ('$quest','$reFilename' ,'$answer1','$answer2','$answer3','$answer4','$ranswer', '$db', '$chapter')";
+        $sql = "INSERT INTO question(quest,filepath, answer1,answer2,answer3,answer4,ranswer,bankID, chapter) VALUES ('$quest','$reFilename' ,'$answer1','$answer2','$answer3','$answer4','$ranswer', '134', '$chapter')";
         if (!move_uploaded_file($tempname, $folder)) {
             echo "<h3> Image not uploaded successfully!</h3>";
         }

@@ -4,7 +4,7 @@ include "../config.php";
 
 if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeacher'] && isset($_SESSION['db'])) {
     $db = $_SESSION['db'];
-$sql = "SELECT *FROM question where courseID = '$db'";
+$sql = "SELECT *FROM question where bankID = '134'";
 
 $result = $conn->query($sql);
 ?>

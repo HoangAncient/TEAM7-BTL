@@ -5,18 +5,29 @@
 }
 
 
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    background: url("../image/login.svg") no-repeat top left 100%;
+  /* The image used */
+  background-image: url("../image/login.svg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
 #content {
    position: relative;
    width: 400px;
-   height: 60vh;
    margin-top: auto;
    margin-bottom: auto;
    padding: 30px;
@@ -96,14 +107,3 @@ body {
    transform: translateX(-50%);
 }
 
-@media (min-width: 481px) {
-   
-}
-@media (max-width: 480px) {
-   #content {
-       width: 100vw;
-       box-sizing: border-box;
-   }
-   
-   
-}
