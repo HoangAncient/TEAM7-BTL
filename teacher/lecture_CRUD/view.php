@@ -31,7 +31,7 @@
     <?php
       include "../../config.php";
 
-      $sql = "SELECT * from sample1";
+      $sql = "SELECT * from lecture";
       // At first I just select 'filepath', resulting in Undefined array key in line 34 where I 
       // want to access the 'id' column in the table => Best practice: SELECT * FROM ... 
       $result = $conn->query($sql);
@@ -47,7 +47,7 @@
             
             $count++;
           ?>   
-              <a class = "btn btn-danger" href="delete.php?id=<?php echo $info['id'] ?>">Delete</a> <br>
+              <a class = "btn btn-danger" href="delete.php?id=<?php echo $info['lectureID'] ?>">Delete</a> <br>
             </div>
 
           <embed src="file/<?php echo $info['filepath']; ?>" type="application/pdf" width="900" height="500"> <br> <br> <br> <br>

@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include "../../config.php";
 
   if (isset($_POST['submit'])) {
@@ -8,9 +9,11 @@
     $pdf_tem_loc = $_FILES['file']['tmp_name'];
     $pdf_store = "file/".$pdf;
 
+    $classID = $_SESSION['classID'];
+
     move_uploaded_file($pdf_tem_loc, $pdf_store);
 
-    $sql = "INSERT INTO sample1(filepath) VALUES ('$pdf')";
+    $sql = "INSERT INTO lecture(filepath, STT, classID) VALUES ('$pdf', 1, '$classID')";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {

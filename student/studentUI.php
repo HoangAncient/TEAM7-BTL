@@ -32,13 +32,16 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
     <title>Document</title>
 </head>
 <body>
-<div id="testList" class="container"></div>
+<div id="testList" class="container"></div> <!-- Test list-->
+<br>
+<div id="lectureList" class="container"></div> <!-- Lecture list -->
 </body>
 </html>
 
 <script>
     var courses;
     window.onload = function GetCourse() {
+        // Test showing
         $.ajax({
             url: 'testInClass.php',
             type: 'get',
@@ -55,6 +58,25 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                 });
 
                 $('#testList').html(d);
+            }
+        });
+
+        // Lecture showing
+        $.ajax({
+            url: 'lectureInClass.php',
+            type: 'get',
+            success: function(data) {
+                lectures = jQuery.parseJSON(data);
+                index = 1;
+                let d = '';
+                $.each(lectures, function(k, v) {
+                    d += '<div class="lecture">';
+                    d += '<a href = "studentLecture.php?lectureID='+ v['lectureID'] + '"><h5 id =' + v['lectureID'] + '> <span class = "text-danger"> ' + index + '. ' + v['filepath'] + ' lớp ' + v['classID'] + '</span></h5></a>'; 
+                    d += '</div>';
+                    index++;
+                });
+
+                $('#lectureList').html(d);
             }
         });
     }

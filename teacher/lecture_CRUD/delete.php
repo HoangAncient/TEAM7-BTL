@@ -8,7 +8,7 @@
     // 'POST' here, the code will not work since 'POST' only works with form submission, and we have to
     // use 'GET' to take the 'id' value directly from the URL query string 
 
-    $sql = "DELETE FROM sample1 WHERE id = '$lecture_id'";
+    $sql = "DELETE FROM lecture WHERE lectureID = '$lecture_id'";
 
     $result = $conn->query($sql);
 
