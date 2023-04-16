@@ -30,6 +30,20 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
             <link rel="stylesheet" href="../assets/css/bootstrapcss/bootstrap.css">
 
             <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
+
+            <style>
+            .calendar {
+                position: absolute;
+                top: 200px;
+                right: 100px;
+                
+            }
+
+            .today {
+                color: blue;
+                font-weight: bold;
+            }
+        </style>
         </head>
 
     <body>
@@ -80,14 +94,53 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
 
 
 
-        <div class="body container-fluid">
+        <div class="body container-fluid"></div>
 
-        </div>
         <div class="col-lg-1"><a href="../login/adminLogout.php">Sign Out</a></div>
 
+        <div id="courseList" class="container"></div>
+
+        <!-- Calendar -->
+        <div class="calendar">
+            <?php
+                $today = strtotime("today");
+                $month = date('m', $today);
+                $year = date('Y', $today);
+                $numDays = date('t', $today);
+                $firstDay = mktime(0,0,0,$month,1,$year);
+                $monthName = date('F', $firstDay);
+                $dayOfWeek = date('D', $firstDay);
+                $days = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+                $offset = array_search($dayOfWeek, $days);
+                $today = date('j');
+
+                echo "<h2>$monthName $year</h2>";
+                echo "<table>";
+                echo "<tr>";
+                foreach($days as $day) {
+                    echo "<th>$day&nbsp;</th>";
+                }
+                echo "</tr>";
+                echo "<tr>";
+                for($i = 0; $i < $offset; $i++) {
+                    echo "<td></td>";
+                }
+                for($i = 1; $i <= $numDays; $i++) {
+                    $dayOfWeek = date('D', mktime(0,0,0,$month,$i,$year));
+                    $cellClass = '';
+                    if($dayOfWeek == 'Sun') {
+                        echo "</tr><tr>";
+                    }
+                    if($i == $today) {
+                        $cellClass = 'today';
+                    }
+                    echo "<td class='$cellClass'>$i&nbsp;</td>";
+                }
+                echo "</tr>";
+                echo "</table>";
+            ?>
         </div>
 
-        <div id="courseList" class="container"></div>
     </body>
 
     </html>

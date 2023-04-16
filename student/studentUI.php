@@ -40,6 +40,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
 
 <script>
     var courses;
+    var lectures;
     window.onload = function GetCourse() {
         // Test showing
         $.ajax({
