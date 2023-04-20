@@ -96,6 +96,7 @@ body {
    transform: translateX(-50%);
 }
 
+<<<<<<< Updated upstream
 @media (min-width: 481px) {
    
 }
@@ -106,4 +107,19 @@ body {
    }
    
    
+=======
+.accProblem {
+   margin-top: 15px;
+   color: black;
+   font-size: 16px;
+}
+
+
+.accProblem a{
+   display: inline-block;
+   text-decoration: none;
+   list-style: none;
+   margin-bottom: 5px;
+   color: #0586EC;
+>>>>>>> Stashed changes
 }
