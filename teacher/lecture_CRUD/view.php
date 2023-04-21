@@ -50,8 +50,29 @@
               <a class = "btn btn-danger" href="delete.php?id=<?php echo $info['lectureID'] ?>">Delete</a> <br>
             </div>
 
-          <embed src="file/<?php echo $info['filepath']; ?>" type="application/pdf" width="900" height="500"> <br> <br> <br> <br>
           <?php
+          if (strpos($info['filepath'], '.mp4') !== false || strpos($info['filepath'], '.mkv') !== false) {
+            ?>
+            <video width="900" height="500" controls> <!-- 'controls' attribute for adding playback controls, such as a play/pause button, a volume control, and a progress bar -->
+              <source src="file/<?php echo $info['filepath']; ?>" type="video/webm">
+            </video>
+            <?php
+          } else {
+            $file_path = "file/" .$info['filepath'];
+            $file_ext = pathinfo($file_path, PATHINFO_EXTENSION);
+            if ($file_ext == 'pdf') {
+            ?>
+              <embed src="file/<?php echo $info['filepath'] ?>" type="application/pdf" width="900" height="500">
+            <?php
+            } else if ($file_ext == 'doc' || $file_ext == 'docx') {
+              header('Content-Disposition: incline; filename="' .$info['filepath']. '"');
+            ?>
+              <iframe src="file/<?php echo $info['filepath'] ?>" width="900" height="500"></iframe>
+            <?php
+            } else {
+              echo 'Only pdf and doc files allowed!';
+            }
+          }
         }
       }
     ?>
