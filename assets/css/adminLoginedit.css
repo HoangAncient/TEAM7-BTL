@@ -12,6 +12,7 @@ body, html {
 }
 
 body {
+<<<<<<< Updated upstream
   /* The image used */
   background-image: url("../image/login.svg");
 
@@ -22,6 +23,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+=======
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url("../background-img/background.jpg") no-repeat top left 100%;
+>>>>>>> Stashed changes
 }
 
 
@@ -107,3 +114,20 @@ body {
    transform: translateX(-50%);
 }
 
+<<<<<<< Updated upstream
+=======
+.accProblem {
+   margin-top: 15px;
+   color: black;
+   font-size: 16px;
+}
+
+
+.accProblem a{
+   display: inline-block;
+   text-decoration: none;
+   list-style: none;
+   margin-bottom: 5px;
+   color: #0586EC;
+}
+>>>>>>> Stashed changes
