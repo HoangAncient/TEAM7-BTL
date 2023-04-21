@@ -80,12 +80,12 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
     <div class="containers">
         <div class="main">
             <div class="main-header">
-                <h4>       Danh sách bài kiểm tra</h4>
+                <h4> Danh sách bài kiểm tra</h4>
             </div>
 
             <div id="testList"></div>
             <div class="main-header">
-                <h4>       Danh sách bài học</h4>
+                <h4> Danh sách bài học</h4>
             </div>
             <div id="lectureList" class="container"></div> <!-- Lecture list -->
         </div>
@@ -115,7 +115,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                     d += '<a href = "studentQuestion.php?testID=' + v['testID'] + '">';
                     d += '<div class="test">';
                     d += '<div class="testDetails">'
-                    d += '<h5 id =' + v['testID'] + '>                  <span> ' + index + '. </span>' + v['testName'] + ' lớp ' + v['courseClassID'] + '</h5>';
+                    d += '<h5 id =' + v['testID'] + '>                  <span> ' + index + '. </span>' + v['testName'] + '</h5>';
                     d += '</div>';
                     d += '</div>';
                     d += '</a>';
@@ -136,9 +136,13 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                 index = 1;
                 let d = '';
                 $.each(lectures, function(k, v) {
+                    d += '<a href = "studentLecture.php?lectureID=' + v['lectureID'] + '">';
                     d += '<div class="lecture">';
-                    d += '<a href = "studentLecture.php?lectureID=' + v['lectureID'] + '"><h5 id =' + v['lectureID'] + '> <span class = "text-danger"> ' + index + '. ' + v['filepath'] + ' lớp ' + v['classID'] + '</span></h5></a>';
+                    d += '<div class="lectureDetails">'
+                    d += '<h5 id =' + v['lectureID'] + '> ' + v['filepath'] + '</h5>'
+                    d += '</div>'
                     d += '</div>';
+                    d += '</a>'
                     index++;
                 });
 

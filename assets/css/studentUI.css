@@ -41,6 +41,14 @@
     object-fit: cover;
 }
 
+
+
+
+
+
+
+
+
 .main {
     position: relative;
     width: calc(100%-130px - 200px);
@@ -50,7 +58,7 @@
     top: 7vh;
 }
 
-.test {
+.test, .lecture {
     display: inline-block;
     width: 55vw;
     height: 40px;
@@ -63,13 +71,14 @@
     color: var(--white);
 }
 
-#testList {
+#testList, #lectureList {
     margin-top: 15px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
     width: 60vw;
     margin-bottom: 15px;
+    margin-left: 0px;
 }
 
 #courseList {
@@ -100,7 +109,7 @@
     align-items: center;
 }
 
-.testDetails {
+.testDetails, .lectureDetails {
     position: relative;
     display: flex;
     align-items: center;
