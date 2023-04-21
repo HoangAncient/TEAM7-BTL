@@ -68,7 +68,16 @@
     background: #FFFFFF;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
-    width: 59vw;
+    width: 60vw;
+    margin-bottom: 15px;
+}
+
+#courseList {
+    margin-top: 15px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+    width: 60vw;
     margin-bottom: 15px;
 }
 
@@ -80,11 +89,22 @@
 
 }
 
+.main-header h4 {
+    margin-left: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
 .testDetails {
     position: relative;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 50px;
     left: 20px;
     line-height: 80px;
 

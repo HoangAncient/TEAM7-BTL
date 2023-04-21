@@ -80,12 +80,12 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
     <div class="containers">
         <div class="main">
             <div class="main-header">
-                <h4>Danh sách bài kiểm tra</h4>
+                <h4>       Danh sách bài kiểm tra</h4>
             </div>
 
             <div id="testList"></div>
             <div class="main-header">
-                <h4>Dang sách bài học</h4>
+                <h4>       Danh sách bài học</h4>
             </div>
             <div id="lectureList" class="container"></div> <!-- Lecture list -->
         </div>

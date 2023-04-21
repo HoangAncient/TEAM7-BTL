@@ -50,7 +50,7 @@
       line-height: 50px;
       align-items: center;
       text-align: center;
-      margin: 10px 10px;
+      margin: 20px 10px;
     }
   </style>
 

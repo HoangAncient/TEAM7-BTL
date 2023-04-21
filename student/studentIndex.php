@@ -33,6 +33,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
         </head>
 
     <body>
+        <!-- ===================================== nav ================================= -->
         <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #0586EC 0%, #531BB0 100%);;">
             <div class="container-fluid align-text-center" style="font-family: 'Poppins';font-weight: 700; font-size:1.5rem;">
                 <a class="navbar-brand" href="#">

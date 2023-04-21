@@ -17,7 +17,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account'])) {
         echo "Connection failed: " . $e->getMessage();
     }
     if (isset($_SESSION['isTeacher']) && $_SESSION['isTeacher']) {
-    $sql = $conn->prepare("SELECT * FROM courseclass cs left join courses c on cs.courseID = c.courseID where cs.teacherID = '$ID'");
+    $sql = $conn->prepare("SELECT * FROM courseclass cs join courses c on cs.courseID = c.courseID where cs.teacherID = '$ID'");
     $sql->execute();
     // $index = 1;
     // $data='';
