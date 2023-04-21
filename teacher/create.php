@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
     }
     // rename($filename, $reFilename);
     $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "./assets/image/" . $reFilename;
+    $folder = "../assets/image/" . $reFilename;
     
     $check_uploaded = true;
     if (!is_uploaded_file($tempname)) $check_uploaded = false;

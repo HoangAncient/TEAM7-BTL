@@ -28,30 +28,17 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
             <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-/LjQZzcpTzaYn7qWqRIWYC5l8FWEZ2bIHIz0D73Uzba4pShEcdLdZyZkI4Kv676E" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" class="css">
             <link rel="stylesheet" href="../assets/css/bootstrapcss/bootstrap.css">
-
+            <link rel="stylesheet" href="../assets/css/homeIndex.css">
             <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
-
-            <style>
-            .calendar {
-                position: absolute;
-                top: 200px;
-                right: 100px;
-                
-            }
-
-            .today {
-                color: blue;
-                font-weight: bold;
-            }
-        </style>
         </head>
 
     <body>
+        <!-- ===================================== nav ================================= -->
         <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #0586EC 0%, #531BB0 100%);;">
             <div class="container-fluid align-text-center" style="font-family: 'Poppins';font-weight: 700; font-size:1.5rem;">
                 <a class="navbar-brand" href="#">
-                    <img src="../assets/image/Logo.svg" alt="Logo" height="42px" class="d-inline-block align-text-center">
-                    <b style="color:#000000; font-size:1.25rem;">Elena</b>
+                    <img src="../assets/image/Logo.svg" alt="Logo" height="37px" class="d-inline-block align-text-center">
+                    <b style="color:#000000; font-size:1.2rem;">Elena</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -73,15 +60,18 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img height="37px" src="../assets/image/ava.jpg" alt="Avatar">
+                                <div class="user">
+                                    <img src="../assets/image/ava.jpg" alt="Avatar">
+                                </div>
+
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="../login/adminLogout.php"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                             </ul>
                         </li>
                         <ul>
@@ -94,20 +84,68 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
 
 
 
-        <div class="body container-fluid"></div>
+        <!--================================== content ========================================-->
 
-        <div class="col-lg-1"><a href="../login/adminLogout.php">Sign Out</a></div>
+        <div class="containers">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa-solid fa-house"></i></ion-icon></div>
 
-        <div id="courseList" class="container"></div>
+                            <div class="title">Home</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa-sharp fa-solid fa-lightbulb"></i></ion-icon></div>
 
-        <!-- Calendar -->
-        <div class="calendar">
-            <?php
+                            <div class="title">Study</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa-solid fa-store"></i></i></div>
+
+                            <div class="title">Redeem</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa-solid fa-book"></i></div>
+
+                            <div class="title">Contest</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fa-solid fa-bell"></i></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- ============================= main =================================== -->
+            <div class="main">
+                <div class="main-header">
+                    Danh sách khóa học
+                </div>
+                <div id="courseList" class="container"></div>
+            </div>
+
+
+
+
+
+            <!-- Calendar -->
+            <div class="calendar">
+                <?php
                 $today = strtotime("today");
                 $month = date('m', $today);
                 $year = date('Y', $today);
                 $numDays = date('t', $today);
-                $firstDay = mktime(0,0,0,$month,1,$year);
+                $firstDay = mktime(0, 0, 0, $month, 1, $year);
                 $monthName = date('F', $firstDay);
                 $dayOfWeek = date('D', $firstDay);
                 $days = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
@@ -117,29 +155,29 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                 echo "<h2>$monthName $year</h2>";
                 echo "<table>";
                 echo "<tr>";
-                foreach($days as $day) {
+                foreach ($days as $day) {
                     echo "<th>$day&nbsp;</th>";
                 }
                 echo "</tr>";
                 echo "<tr>";
-                for($i = 0; $i < $offset; $i++) {
+                for ($i = 0; $i < $offset; $i++) {
                     echo "<td></td>";
                 }
-                for($i = 1; $i <= $numDays; $i++) {
-                    $dayOfWeek = date('D', mktime(0,0,0,$month,$i,$year));
+                for ($i = 1; $i <= $numDays; $i++) {
+                    $dayOfWeek = date('D', mktime(0, 0, 0, $month, $i, $year));
                     $cellClass = '';
-                    if($dayOfWeek == 'Sun') {
+                    if ($dayOfWeek == 'Sun') {
                         echo "</tr><tr>";
                     }
-                    if($i == $today) {
+                    if ($i == $today) {
                         $cellClass = 'today';
                     }
                     echo "<td class='$cellClass'>$i&nbsp;</td>";
                 }
                 echo "</tr>";
                 echo "</table>";
-            ?>
-        </div>
+                ?>
+            </div>
 
     </body>
 
@@ -148,26 +186,55 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
         var courses;
         window.onload = function GetCourse() {
             $.ajax({
-                url: 'studentControl.php',
+                url: 'courseController.php',
                 type: 'get',
                 success: function(data) {
                     courses = jQuery.parseJSON(data);
                     index = 1;
                     let d = '';
-
                     $.each(courses, function(k, v) {
-                        d += '<div class="course">';
-                        d += '<a href = "studentUI.php?classID=' + v['classID'] + '"><h5 id =' + v['classID'] + '> <span class = "text-danger"> ' + index + '. </span>' + v['courseName'] + ' lớp ' + v['classID'] + '</h5></a>';
+
+
+                        d += '<a href = "studentUI.php?classID=' + v['classID'] + '">';
+                        d += '<div class="course  ' + v['courseID'] + '">';
+                        d += '<div class = "singleCourse">'
+                        d += '<h4 id =' + v['classID'] + '> ' + v['courseName'] + ' </h4>';
+                        d += '</div>'
+                        d += '<div class = "courseDetails">'
+                        d += '<p>' + v['className'] + '</p>'
+                        d += '</div>'
                         d += '</div>';
+                        d += '</a>'
                         index++;
+
                     });
 
                     $('#courseList').html(d);
+                    changeBgColor();
+
                 }
             });
         }
-    </script>
 
+        function changeBgColor() {
+            const collection = document.getElementsByClassName("INT2204");
+            for (let i = 0; i < collection.length; i++) {
+                collection[i].style.background = "linear-gradient(180deg, #541AAF 0%, #008EF0 100%)";
+            }
+            const collection1 = document.getElementsByClassName("INT2208");
+            for (let i = 0; i < collection1.length; i++) {
+                collection1[i].style.background = "linear-gradient(180deg, #4E08A4 0%, #FF41E2 100%)";
+            }
+            const collection2 = document.getElementsByClassName("INT2211");
+            for (let i = 0; i < collection2.length; i++) {
+                collection2[i].style.background = "linear-gradient(180deg, #A00384 0%, #FE6E1B 100%)";
+            }
+            const collection3 = document.getElementsByClassName("INT2212");
+            for (let i = 0; i < collection3.length; i++) {
+                collection3[i].style.background = "linear-gradient(180deg, #00BADF 0%, #00F5BE 100%)";
+            }
+        }
+    </script>
 
 <?php } else {
     header("Location: ../login/adminLogin.php");

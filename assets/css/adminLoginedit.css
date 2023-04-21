@@ -107,3 +107,17 @@ body {
    transform: translateX(-50%);
 }
 
+.accProblem {
+   margin-top: 15px;
+   color: black;
+   font-size: 16px;
+}
+
+
+.accProblem a{
+   display: inline-block;
+   text-decoration: none;
+   list-style: none;
+   margin-bottom: 5px;
+   color: #0586EC;
+}

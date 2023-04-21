@@ -10,14 +10,14 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account'])) {
     $password = "";
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=qrabiloo", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=elena", $username, $password);
         //set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e){
         echo "Connection failed: " . $e->getMessage();
     }
     if (isset($_SESSION['isTeacher']) && $_SESSION['isTeacher']) {
-    $sql = $conn->prepare("SELECT * FROM courseclass cs left join courses c on cs.courseID = c.courseID where cs.teacherID = '$ID'");
+    $sql = $conn->prepare("SELECT * FROM courseclass cs join courses c on cs.courseID = c.courseID where cs.teacherID = '$ID'");
     $sql->execute();
     // $index = 1;
     // $data='';

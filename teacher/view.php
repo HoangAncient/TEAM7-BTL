@@ -56,7 +56,7 @@ $result = $conn->query($sql);
                             <td><?php echo $row['quest']; ?></td>
                             <?php
                                 if ($row['filepath'] != NULL) {
-                                    $link = "assets/image/" . $row['filepath'];
+                                    $link = "../assets/image/" . $row['filepath'];
                                     // str_replace( "\\ ", " ", $link);
                                     // echo $link;
                                     ?>
