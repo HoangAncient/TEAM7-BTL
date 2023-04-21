@@ -79,10 +79,19 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                 <div class="main-header">
                     <h4>       Các lớp học phần</h4>
                 </div>
-
                 <div id="courseList"></div>
+
                 <div class="main-header">
                     <h4>       Quiz hằng ngày</h4>
+                </div>
+                <div><br></div>
+
+                <div class="main-header">
+                    <div class="text">
+                    <h4>       Ngân hàng câu hỏi</h4>
+                    </div>
+                
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
                 </div>
 
             </div>

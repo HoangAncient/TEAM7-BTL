@@ -107,6 +107,7 @@
     line-height: 44px;
     display: flex;
     align-items: center;
+
 }
 
 .testDetails, .lectureDetails {
@@ -117,4 +118,12 @@
     left: 20px;
     line-height: 80px;
 
+}
+
+.text {
+    display: inline-block;
+}
+
+.main-header a {
+    display: inline-block;
 }
