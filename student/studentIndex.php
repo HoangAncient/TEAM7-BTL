@@ -20,12 +20,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
         <title>Document</title>
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-/LjQZzcpTzaYn7qWqRIWYC5l8FWEZ2bIHIz0D73Uzba4pShEcdLdZyZkI4Kv676E" crossorigin="anonymous"></script>
 
-<<<<<<< Updated upstream
-        <link rel="stylesheet" href="../assets/css/bootstrapcss/bootstrap.css">
-
-        <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
-    </head>
-=======
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +31,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
             <link rel="stylesheet" href="../assets/css/homeIndex.css">
             <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
         </head>
->>>>>>> Stashed changes
 
     <body>
         <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #0586EC 0%, #531BB0 100%);;">
@@ -84,12 +77,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
             </div>
         </nav>
 
-<<<<<<< Updated upstream
-        <div class="col-lg-1"><a href="../login/adminLogout.php">Sign Out</a></div>
-
-
-        <div id="courseList" class="container"></div>
-=======
 
 
         <!--================================== content ========================================-->
@@ -147,7 +134,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
 
 
         </div>
->>>>>>> Stashed changes
     </body>
 
     </html>
