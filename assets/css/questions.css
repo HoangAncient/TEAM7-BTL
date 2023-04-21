@@ -1,11 +1,16 @@
 body {
     background-size: 40px 40px;
-    background-image:
-    linear-gradient(to right, grey 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px);
-    background-color: #FCF9E9;
+    background-color: #8dc9f7; 
 }
 
+:root {
+    --black1: #322f26;
+
+}
+
+*{
+    color: var(--black1);
+}
 
 #startDiv {
     position: absolute;
@@ -21,20 +26,20 @@ body {
     height: 12%;
     font-size: 2.7rem;
     text-align: center;
-    background-color: #FFC92B;
+    background-color: #f8c323;
     border-radius: 5px;
     padding-left: 5%;
-    border: 2px solid black;
+    border: 2px solid var(--black1);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;  
 }
 
 #bodyDiv {
     height: 90%;
-    border: 2px solid black;
+    border: 2px solid var(--black1);
     background-color: #FCF9E9;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 .customBtnR {
@@ -61,22 +66,22 @@ body {
     word-wrap: break-word;
     line-height: 1.5;
     font-size: 2.2rem;
-    background-color: #FFC92B;
-    border-radius: 5px;
+    background: #f8c323;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 5%;
-    border: 2px solid black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;  
+    border: 2px solid var(--black1);
+    color: var(--black1);
     
 }
 .answer {
     
-    border: 2px solid black;
+    border: 2px solid var(--black1);
     background-color: #FCF9E9;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;  
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;  
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;  
 
 }
 
@@ -96,6 +101,7 @@ label {
 
 #mark {
     font-size: 2.5rem;
+    color: var(--black1);
 }
 
 #btnFinish {

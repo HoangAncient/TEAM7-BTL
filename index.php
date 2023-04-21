@@ -8,9 +8,8 @@
   <title>Wcontest-Team2</title>
 
 
-  <link rel="stylesheet" href="./assets/css/bootstrapcss/bootstrap.css">
-  <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
-
+  <!-- <link rel="stylesheet" href="./assets/css/bootstrapcss/bootstrap.css">
+  <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script> -->
   <style>
     body,
     html {
@@ -21,16 +20,40 @@
     .bg {
       /* The image used */
       background-image: url("./assets/image/firstAppearance.svg");
-
       /* Full height */
       height: 100%;
-
       /* Center and scale the image nicely */
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    .buttons {
+      display: relative;
+      float: right;
+      margin-right: 100px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 95px;
+      height: 50px;
+      background: linear-gradient(270deg, #AFA0FD 0%, #FF9FF0 100%);
+      box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 18px;
+      color: white;
+      text-decoration: none;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 50px;
+      align-items: center;
+      text-align: center;
+      margin: 10px 10px;
+    }
   </style>
+
 
 
 
@@ -39,22 +62,15 @@
 <body>
 
   <div class="bg">
-    <div class="container-fluid">
-      <div class="row justify-content-end">
-        <div class="col-1">
-          <a class="btn" href="./login/adminLogin.php" role="button"><img style="width:125px"src="./assets/image/loginButton.svg" alt=""></a>
-
-        </div>
-        <div class="col-2">
-          <a class="btn" href="./login/adminSignup.php" role="button"><img style="width:125px" src="./assets/image/signupButton.svg" alt=""></a>
-
-        </div>
-      </div>
+    <div class="buttons">
+      <a href="./login/adminLogin.php">
+        <div class="btn">Login</div>
+      </a>
+      <a href="./login/adminSignup.php">
+        <div class="btn">Sign Up</div>
+      </a>
     </div>
-
   </div>
-  <!-- <a href="./login/adminLogin.php"><img style="height:100%" src="./assets/image/firstAppearance.svg" alt=""></a> -->
-
 
 
 </body>
