@@ -34,13 +34,19 @@
         </div>
 
         <?php
-        if (strpos($info['filepath'], '.mp4') !== false) {
+        if (strpos($info['filepath'], '.mp4',) !== false) {
           ?>
           <video width="900" height="500" controls> <!-- 'controls' attribute for adding playback controls, such as a play/pause button, a volume control, and a progress bar -->
-            <source src="../teacher/lecture_CRUD/file/<?php echo $info['filepath']; ?>" type="video/mp4">
+            <source src="../teacher/lecture_CRUD/file/<?php echo $info['filepath']; ?>" type="video/webm">
           </video>
           <?php
-        } else {
+        } if (strpos($info['filepath'], '.mkv',) !== false) {
+          ?>
+          <video width="900" height="500" controls> <!-- 'controls' attribute for adding playback controls, such as a play/pause button, a volume control, and a progress bar -->
+            <source src="../teacher/lecture_CRUD/file/<?php echo $info['filepath']; ?>" type="video/webm">
+          </video>
+          <?php 
+        }else {
           ?>
           <embed src="../teacher/lecture_CRUD/file/<?php echo $info['filepath']; ?>" type="application/pdf" width="900" height="500"> <br> <br> <br> <br>
           <?php

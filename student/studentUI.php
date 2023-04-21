@@ -7,7 +7,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
         $_SESSION['classID'] = $_GET['classID'];
     }
     $ID = $_SESSION['ID'];
-}
+
 
 ?>
 
@@ -23,6 +23,8 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" class="css">
     <link rel="stylesheet" href="../assets/css/bootstrapcss/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/studentUI.css">
+    <script src="../assets/js/bootstrapjs/bootstrap.bundle.js"></script>
+
 
 
     <title>Document</title>
@@ -32,8 +34,8 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
     <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #0586EC 0%, #531BB0 100%);;">
         <div class="container-fluid align-text-center" style="font-family: 'Poppins';font-weight: 700; font-size:1.5rem;">
             <a class="navbar-brand" href="#">
-                <img src="../assets/image/Logo.svg" alt="Logo" height="42px" class="d-inline-block align-text-center">
-                <b style="color:#000000; font-size:1.25rem;">Elena</b>
+                <img src="../assets/image/Logo.svg" alt="Logo" height="37px" class="d-inline-block align-text-center">
+                <b style="color:#000000; font-size:1.2rem;">Elena</b>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,19 +56,19 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="user">
                                 <img src="../assets/image/ava.jpg" alt="Avatar">
                             </div>
 
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="../login/adminLogout.php"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                         </ul>
                     </li>
                     <ul>
@@ -74,7 +76,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
 
         </div>
     </nav>
-
 
     <!-- =======================================content============================== -->
     <div class="containers">
@@ -151,3 +152,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
         });
     }
 </script>
+
+<?php } else {
+    header("Location: ../login/adminLogin.php");
+} ?>

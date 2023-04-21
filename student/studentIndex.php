@@ -48,7 +48,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && (!$_SESSION['isTeac
                     <div class="mx-auto" style="width:40%">
                         <form class="d-flex" role="search" style="width:100%;">
                             <input class="form-control me-2" type="search" placeholder="Tìm kiếm khóa học" aria-label="Search"><i class="bi bi-search"></i>
-                            <button class="btn btn-primary" type="submit"><img src="../assets/image/search.svg" alt=""></button>
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
 
