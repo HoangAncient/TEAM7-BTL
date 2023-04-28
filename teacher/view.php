@@ -32,17 +32,18 @@ $result = $conn->query($sql);
         <caption><h1 style="font-size: 1.5rem; color: #F7F7F7">ALL QUESTION</h1></caption>
             <thead style="background-color: #25408f">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Question</th>
-                    <th scope="col">Picture</th>
-                    <th scope="col">Answer1</th>
-                    <th scope="col">Answer2</th>
-                    <th scope="col">Answer3</th>
-                    <th scope="col">Answer4</th>
-                    <th scope="col">Right answer</th>
-                    <th scope="col">Chapter</th>
-                    <th scope="col">Hardmode</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col" class="text-center">Question</th>
+                    <th scope="col" class="text-center">Picture</th>
+                    <th scope="col" class="text-center">Answer1</th>
+                    <th scope="col" class="text-center">Answer2</th>
+                    <th scope="col" class="text-center">Answer3</th>
+                    <th scope="col" class="text-center">Answer4</th>
+                    <th scope="col" class="text-center">Right answer</th>
+                    <th scope="col" class="text-center">Explaination</th>
+                    <th scope="col" class="text-center">Chapter</th>
+                    <th scope="col" class="text-center">Hardmode</th>
+                    <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,6 +74,7 @@ $result = $conn->query($sql);
                             <td><?php echo $row['answer3']; ?></td>
                             <td><?php echo $row['answer4']; ?></td>
                             <td><?php echo $row['ranswer']; ?></td>
+                            <td><?php echo $row['explaination']; ?></td>
                             <td><?php $chapter = $row['chapter'];
                             $explode = explode(".",$chapter);
                             echo $explode[0]; ?></td>
@@ -89,17 +91,18 @@ $result = $conn->query($sql);
             </tbody>
             <tfoot style="background-color: #25408f">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Question</th>
-                    <th scope="col">Picture</th>
-                    <th scope="col">Answer1</th>
-                    <th scope="col">Answer2</th>
-                    <th scope="col">Answer3</th>
-                    <th scope="col">Answer4</th>
-                    <th scope="col">Right answer</th>
-                    <th scope="col">Chapter</th>
-                    <th scope="col">Hardmode</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" class="text-center">ID</th>
+                    <th scope="col" class="text-center">Question</th>
+                    <th scope="col" class="text-center">Picture</th>
+                    <th scope="col" class="text-center">Answer1</th>
+                    <th scope="col" class="text-center">Answer2</th>
+                    <th scope="col" class="text-center">Answer3</th>
+                    <th scope="col" class="text-center">Answer4</th>
+                    <th scope="col" class="text-center">Right answer</th>
+                    <th scope="col" class="text-center">Explaination</th>
+                    <th scope="col" class="text-center">Chapter</th>
+                    <th scope="col" class="text-center">Hardmode</th>
+                    <th scope="col" class="text-center">Action</th>
                 </tr>
             </tfoot>
         </table>

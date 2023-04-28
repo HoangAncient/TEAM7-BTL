@@ -11,10 +11,10 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
     $explode_course = explode("_",$classID);
     $db = $explode_course[1];
     $_SESSION['db'] = $db;
-    $sql = "SELECT courseName FROM courses where courseID = '$db'";
+    $sql = "SELECT className FROM courseclass where classID = '$classID'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $name = $row['courseName'];
+    $name = $row['className'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +100,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
             </div>
             <div class="col">
                 <div class="top-bar">
-                    <div class="headerText" style="display: inline-flex; align-items: center; color: white; font-size: 28px; padding-left: 400px;">Bộ môn <?php echo $name; ?> </div>
+                    <div class="headerText" style="display: inline-flex; align-items: center; color: white; font-size: 28px; padding-left: 400px;"><?php echo $name; ?> </div>
                     <button type="button" class="btn nav-link control-btn px-2 pt-2 pb-2 mt-3 mb-3" style="display: inline-flex; align-items: center" id="add-button">
                         <i class="bi bi-file-earmark-plus"></i>
                         <span class="ms-1"><a href="view.php" class="add-exam">VIEW DATABASE</a></span>
