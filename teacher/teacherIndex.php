@@ -39,7 +39,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
                     <div class="mx-auto" style="width:40%">
                         <form class="d-flex" role="search" style="width:100%;">
                             <input class="form-control me-2" type="search" placeholder="Tìm kiếm khóa học" aria-label="Search"><i class="bi bi-search"></i>
-                            <button class="btn btn-primary" type="submit"><img src="../assets/image/search.svg" alt=""></button>
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
 
@@ -77,20 +77,20 @@ if (isset($_SESSION['ID']) && isset($_SESSION['account']) && $_SESSION['isTeache
         <div class="containers">
             <div class="main">
                 <div class="main-header">
-                    <h4>       Các lớp học phần</h4>
+                    <h4> Các lớp học phần</h4>
                 </div>
                 <div id="courseList"></div>
 
                 <div class="main-header">
-                    <h4>       Quiz hằng ngày</h4>
+                    <h4> Quiz hằng ngày</h4>
                 </div>
                 <div><br></div>
 
                 <div class="main-header">
                     <div class="text">
-                    <h4>       Ngân hàng câu hỏi</h4>
+                        <h4> Ngân hàng câu hỏi</h4>
                     </div>
-                
+
                     <a href=""><i class="fa-solid fa-plus"></i></a>
                 </div>
 
